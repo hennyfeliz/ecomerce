@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class User {
 
-        private Integer id;
+        private Long id;
         private String email;
         private String password;
         private String firstName;
@@ -25,7 +25,7 @@ public class User {
         // Constructors
 
 
-    public User(Integer id, String email, String password, String firstName, String lastName, String address, String city, String state, String zip, String country, String phone, String fax, boolean emailVerified, Date registrationDate, String verificationCode, String ip, String address2) {
+    public User(Long id, String email, String password, String firstName, String lastName, String address, String city, String state, String zip, String country, String phone, String fax, boolean emailVerified, Date registrationDate, String verificationCode, String ip, String address2) {
         this.id = id;
         this.email = email;
         this.password = password;
@@ -48,11 +48,11 @@ public class User {
     public User() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
