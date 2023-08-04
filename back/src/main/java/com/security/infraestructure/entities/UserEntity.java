@@ -1,11 +1,14 @@
 package com.security.infraestructure.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.security.domain.model.ShoppingCart;
 import com.security.domain.model.User;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 @Getter
@@ -50,28 +53,17 @@ public class UserEntity {
     private String ip;
     private String address2;
 
+    @JsonIgnore
+    @OneToOne(mappedBy = "user")
+    private ShoppingCartEntity shoppingCart;
+
     public static UserEntity fromDomainModel(User user){
         return new UserEntity(user.getId(), user.getEmail(), user.getPassword(), user.getFirstName(), user.getLastName(), user.getAddress(), user.getCity(), user.getState(), user.getIp(), user.getCountry(), user.getPhone(), user.getFax(),
-                user.isEmailVerified(), user.getRegistrationDate(), user.getVerificationCode(), user.getIp(), user.getAddress2());
+                user.isEmailVerified(), user.getRegistrationDate(), user.getVerificationCode(), user.getIp(), user.getAddress2(), user.getShoppingCart());
     }
 
     public User toDomainModel(){
-        return new User(id, email, password, firstName, lastName, address, city, state, zip, country, phone, fax, emailVerified, registrationDate, verificationCode, ip, address2);
+        return new User(id, email, password, firstName, lastName, address, city, state, zip, country, phone, fax, emailVerified, registrationDate, verificationCode, ip, address2, shoppingCart);
     }
 
-    @Override
-    public final boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null) return false;
-        Class<?> oEffectiveClass = o instanceof HibernateProxy ? ((HibernateProxy) o).getHibernateLazyInitializer().getPersistentClass() : o.getClass();
-        Class<?> thisEffectiveClass = this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass() : this.getClass();
-        if (thisEffectiveClass != oEffectiveClass) return false;
-        UserEntity that = (UserEntity) o;
-        return getId() != null && Objects.equals(getId(), that.getId());
-    }
-
-    @Override
-    public final int hashCode() {
-        return getClass().hashCode();
-    }
 }

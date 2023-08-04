@@ -1,4 +1,6 @@
 package com.security.domain.model;
+import com.security.infraestructure.entities.ShoppingCartEntity;
+
 import java.util.Date;
 import java.util.Objects;
 
@@ -21,11 +23,12 @@ public class User {
         private String verificationCode;
         private String ip;
         private String address2;
+        private ShoppingCartEntity shoppingCart;
 
         // Constructors
 
 
-    public User(Long id, String email, String password, String firstName, String lastName, String address, String city, String state, String zip, String country, String phone, String fax, boolean emailVerified, Date registrationDate, String verificationCode, String ip, String address2) {
+    public User(Long id, String email, String password, String firstName, String lastName, String address, String city, String state, String zip, String country, String phone, String fax, boolean emailVerified, Date registrationDate, String verificationCode, String ip, String address2, ShoppingCartEntity shoppingCart) {
         this.id = id;
         this.email = email;
         this.password = password;
@@ -43,6 +46,7 @@ public class User {
         this.verificationCode = verificationCode;
         this.ip = ip;
         this.address2 = address2;
+        this.shoppingCart = shoppingCart;
     }
 
     public User() {
@@ -184,17 +188,25 @@ public class User {
         this.address2 = address2;
     }
 
+    public ShoppingCartEntity getShoppingCart() {
+        return shoppingCart;
+    }
+
+    public void setShoppingCart(ShoppingCartEntity shoppingCart) {
+        this.shoppingCart = shoppingCart;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return emailVerified == user.emailVerified && Objects.equals(id, user.id) && Objects.equals(email, user.email) && Objects.equals(password, user.password) && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(address, user.address) && Objects.equals(city, user.city) && Objects.equals(state, user.state) && Objects.equals(zip, user.zip) && Objects.equals(country, user.country) && Objects.equals(phone, user.phone) && Objects.equals(fax, user.fax) && Objects.equals(registrationDate, user.registrationDate) && Objects.equals(verificationCode, user.verificationCode) && Objects.equals(ip, user.ip) && Objects.equals(address2, user.address2);
+        return emailVerified == user.emailVerified && Objects.equals(id, user.id) && Objects.equals(email, user.email) && Objects.equals(password, user.password) && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(address, user.address) && Objects.equals(city, user.city) && Objects.equals(state, user.state) && Objects.equals(zip, user.zip) && Objects.equals(country, user.country) && Objects.equals(phone, user.phone) && Objects.equals(fax, user.fax) && Objects.equals(registrationDate, user.registrationDate) && Objects.equals(verificationCode, user.verificationCode) && Objects.equals(ip, user.ip) && Objects.equals(address2, user.address2) && Objects.equals(shoppingCart, user.shoppingCart);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, email, password, firstName, lastName, address, city, state, zip, country, phone, fax, emailVerified, registrationDate, verificationCode, ip, address2);
+        return Objects.hash(id, email, password, firstName, lastName, address, city, state, zip, country, phone, fax, emailVerified, registrationDate, verificationCode, ip, address2, shoppingCart);
     }
 
     @Override
@@ -217,6 +229,7 @@ public class User {
                 ", verificationCode='" + verificationCode + '\'' +
                 ", ip='" + ip + '\'' +
                 ", address2='" + address2 + '\'' +
+                ", shoppingCart=" + shoppingCart +
                 '}';
     }
 }
