@@ -57,12 +57,17 @@ public class ProductEntity {
     @OneToMany(mappedBy = "product")
     private List<ShoppingCartEntity> shoppingCart;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "product")
+    private List<ProductOptionEntity> productOptions;
+
     public static ProductEntity fromDomainModel(Product product){
         return new ProductEntity(product.getId(), product.getSku(), product.getName(), product.getPrice(), product.getWeight(), product.getCartDesc(), product.getShortDesc(), product.getLongDesc(),
-                product.getThumb(), product.getImage(), product.getCategory(), product.getUpdateDate(), product.getStock(), product.getLive(), product.getUnlimited(), product.getLocation(), product.getOrderDetail(), product.getShoppingCart());
+                product.getThumb(), product.getImage(), product.getCategory(), product.getUpdateDate(), product.getStock(), product.getLive(), product.getUnlimited(), product.getLocation(),
+                product.getOrderDetail(), product.getShoppingCart(), product.getProductOptions());
     }
 
     public Product toDomainModel(){
-        return new Product(id, sku, name, price, weight, cartDesc, shortDesc, longDesc, thumb, image, category, updateDate, stock, live, unlimited, location, orderDetail, shoppingCart);
+        return new Product(id, sku, name, price, weight, cartDesc, shortDesc, longDesc, thumb, image, category, updateDate, stock, live, unlimited, location, orderDetail, shoppingCart, productOptions);
     }
 }
