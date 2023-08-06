@@ -1,5 +1,19 @@
+
+@font-face {
+  font-family: 'baloo';
+  src: url('./assets/fonts/Baloo.ttf') format('truetype');
+  font-display: swap;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'baloo', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/*
+:root {
+  font-family: 'baloo', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -67,3 +81,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+*/
