@@ -82,4 +82,40 @@ public class ApplicationConfig {
     public ShoppingCartRepositoryPort shoppingCartRepositoryPort(JpaShoppingCartRepositoryAdapter jpaShoppingCartRepositoryAdapter){
         return jpaShoppingCartRepositoryAdapter;
     }
+
+    // option group beans config
+
+    @Bean
+    public OptionGroupService optionGroupService(OptionGroupRepositoryPort optionGroupRepositoryPort){
+        return new OptionGroupService(new OptionGroupUseCaseImpl(optionGroupRepositoryPort));
+    }
+
+    @Bean
+    public OptionGroupRepositoryPort optionGroupRepositoryPort(JpaOptionGroupRepositoryAdapter jpaOptionGroupRepositoryAdapter){
+        return jpaOptionGroupRepositoryAdapter;
+    }
+
+    // options beans config
+
+    @Bean
+    public OptionService optionService(OptionRepositoryPort optionRepositoryPort){
+        return new OptionService(new OptionUseCaseImpl(optionRepositoryPort));
+    }
+
+    @Bean
+    public OptionRepositoryPort optionRepositoryPort(JpaOptionRepositoryAdapter jpaOptionRepositoryAdapter){
+        return jpaOptionRepositoryAdapter;
+    }
+
+    // product options beans config
+
+    @Bean
+    public ProductOptionService productOptionService(ProductOptionRepositoryPort productOptionRepositoryPort){
+        return new ProductOptionService(new ProductOptionUseCaseImpl(productOptionRepositoryPort));
+    }
+
+    @Bean
+    public ProductOptionRepositoryPort productOptionRepositoryPort(JpaProductOptionRepositoryAdapter jpaProductOptionRepositoryAdapter){
+        return jpaProductOptionRepositoryAdapter;
+    }
 }
