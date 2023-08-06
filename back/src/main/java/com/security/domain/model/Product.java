@@ -2,6 +2,7 @@ package com.security.domain.model;
 
 
 import com.security.infraestructure.entities.OrderDetailEntity;
+import com.security.infraestructure.entities.ProductOptionEntity;
 import com.security.infraestructure.entities.ShoppingCartEntity;
 
 import java.util.Date;
@@ -27,8 +28,9 @@ public class Product {
     private String location;
     private List<OrderDetailEntity> orderDetail;
     private List<ShoppingCartEntity> shoppingCart;
+    private List<ProductOptionEntity> productOptions;
 
-    public Product(Long id, String sku, String name, float price, float weight, String cartDesc, String shortDesc, String longDesc, String thumb, String image, Integer category, Date updateDate, Float stock, byte live, byte unlimited, String location, List<OrderDetailEntity> orderDetail, List<ShoppingCartEntity> shoppingCart) {
+    public Product(Long id, String sku, String name, float price, float weight, String cartDesc, String shortDesc, String longDesc, String thumb, String image, Integer category, Date updateDate, Float stock, byte live, byte unlimited, String location, List<OrderDetailEntity> orderDetail, List<ShoppingCartEntity> shoppingCart, List<ProductOptionEntity> productOptions) {
         this.id = id;
         this.sku = sku;
         this.name = name;
@@ -47,6 +49,7 @@ public class Product {
         this.location = location;
         this.orderDetail = orderDetail;
         this.shoppingCart = shoppingCart;
+        this.productOptions = productOptions;
     }
 
     public Product (){
@@ -197,6 +200,14 @@ public class Product {
         this.shoppingCart = shoppingCart;
     }
 
+    public List<ProductOptionEntity> getProductOptions() {
+        return productOptions;
+    }
+
+    public void setProductOptions(List<ProductOptionEntity> productOptions) {
+        this.productOptions = productOptions;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -231,6 +242,7 @@ public class Product {
                 ", location='" + location + '\'' +
                 ", orderDetail=" + orderDetail +
                 ", shoppingCart=" + shoppingCart +
+                ", productOptions=" + productOptions +
                 '}';
     }
 }
