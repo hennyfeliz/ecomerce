@@ -90,6 +90,7 @@ header {
 }
 
 .header-categories > span:hover {
+  cursor: pointer;
   font-weight: 700;
 }
 
