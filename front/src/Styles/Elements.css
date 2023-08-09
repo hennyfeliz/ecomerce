@@ -1,0 +1,49 @@
+
+
+
+.elements{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 100px 100px;
+
+}
+
+.element{
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 300px;
+  margin: 10px;
+  border: 1px solid black;
+  box-shadow: rgb(146, 146, 146) 4px 4px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.element:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  -moz-transition: transform 0.3s ease;
+  -ms-transition: transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  -webkit-transform: scale(1.03);
+  -moz-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  -o-transform: scale(1.03);
+}
+
+.element > div {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+}
+
+.element > div > * {
+  height: 20px;
+}
+
+
