@@ -1,5 +1,5 @@
 
-import './Styles.css'
+import '../../Styles/Header.css'
 import search from './header_assets/search.svg'
 import cart from './header_assets/cart.svg'
 import user from './header_assets/user-1.svg'
