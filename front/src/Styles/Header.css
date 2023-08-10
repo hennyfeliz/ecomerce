@@ -41,10 +41,25 @@ header {
   width: 400px;
   border: none;
   outline: none;
+  transition: background-color 0.3s;
   background-color: #e4e4e4;
   padding: 4px 20px;
   border-top-left-radius: 24px;
   border-bottom-left-radius: 24px;
+}
+
+
+.header-search > div > img {
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.header-search > div > input:hover {
+  background-color: #949494;
+}
+
+.header-search > div > img:hover {
+  background-color: #949494;
 }
 
 .input-text-container > img {
@@ -58,12 +73,11 @@ header {
 
 .right-side-header-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
   height: 40px;
-  padding: 2px 4px;
-  margin: 2px 4px;
+  /* padding: 2px 4px; */
+  /* margin: 2px 4px; */
   border-radius: 8px;
   transition: background-color 0.3s;
   -webkit-border-radius: 8px;
@@ -76,7 +90,13 @@ header {
   -o-transition: background-color 0.3s;
 }
 
-.right-side-header-container:hover {
+.right-side-header-container > img {
+  padding: 10px;
+  transition: background-color 0.3s;
+  border-radius: 8px;
+}
+
+.right-side-header-container > img:hover {
   background-color: #e4e4e4;
 }
 

@@ -35,17 +35,11 @@ const Header = () => {
               alt="user-icon"
               style={{ width: "24px", height: "24px" }}
             />
-            <span>
-              Account</span>
-          </div>
-          <div className="right-side-header-container">
             <img
               src={cart}
               alt="cart-icon"
               style={{ width: "24px", height: "24px" }}
             />
-            <span>
-              Cart</span>
           </div>
         </div>
       </header>
