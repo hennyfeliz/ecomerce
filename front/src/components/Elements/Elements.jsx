@@ -9,6 +9,7 @@ const Elements = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedModalData, setSelectedModalData] = useState({}); // Datos para el modal
   const [elements, setElements] = useState([]);
+  const [originalElements, setOriginalElements] = useState([]);
 
   const openModal = (element) => {
     setSelectedModalData(element);
@@ -19,12 +20,33 @@ const Elements = () => {
     setIsModalOpen(false);
   };
 
+  const filter = (e) => {
+    console.log(e.target.value)
+    const searchTerm = e.target.value.toLowerCase();
+    if (searchTerm === '') {
+      setElements(originalElements);
+    } else {
+      const filteredElements = originalElements.filter(item =>
+        item.name.toLowerCase().includes(searchTerm) ||
+        item.cartDesc.toLowerCase().includes(searchTerm)
+      );
+      setElements(filteredElements);
+    }
+  }
+
   useEffect(() => {
-    fetchData('GET', '/product/', setElements);
-  }, [])
+    fetchData('GET', '/product/', (data) => {
+      setOriginalElements(data);
+      setElements(data);
+    });
+  }, []);
 
   return (
     <>
+      <div className="filtro-productos">
+        <span>Búscar productos</span>
+        <input placeholder='Filtrar productos' onChange={filter} />
+      </div>
       <div className="elements">
         {
           elements.map((item, index) => {
