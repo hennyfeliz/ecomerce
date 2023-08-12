@@ -1,14 +1,10 @@
-
-
-
-.elements{
+.elements {
   display: flex;
   flex-wrap: wrap;
   margin: 20px 100px;
-
 }
 
-.element{
+.element {
   display: flex;
   flex-direction: column;
   width: 250px;
@@ -46,5 +42,113 @@
 .element > div > * {
   height: 20px;
 }
+
+select {
+  padding: 14px;
+  /* font-family: baloo; */
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
+
+.filtro-productos {
+  display: flex;
+  align-items: center;
+  /* margin-left: 140px;
+  margin-top: 40px; */
+
+  > select {
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    background-color: #d3d3d3;
+    width: 300px;
+    padding: 14px;
+
+    > option {
+      border-radius: none;
+    }
+  }
+
+  > input {
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    background-color: #d3d3d3;
+    transition: background-color 0.3s;
+    width: 300px;
+    padding: 14px;
+  }
+
+  > * {
+    margin: 10px;
+  }
+}
+
+.button-ord {
+  padding: 14px;
+  border-radius: 4px;
+  width: 120px;
+  border: none;
+  outline: none;
+  background-color: #d3d3d3;
+  transition: outline 0.3s;
+  cursor: pointer;
+}
+
+.button-ord:hover {
+  outline: 1px solid black;
+}
+
+.filtro-productos > input:hover {
+  outline: 1px solid black;
+}
+
+.filtro-productos > select:hover {
+  outline: 1px solid black;
+}
+
+.filtro-productos > select > option {
+  /* width: 500px; */
+}
+
+.todos-los-filtros {
+  background-color: #eeeeee;
+  border-radius: 7px;
+  margin: 10px 120px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Estilos para el input de rango personalizado */
+.custom-range-input {
+  width: 100%; /* Ajusta el ancho según tus preferencias */
+  height: 0px;
+  background-color: transparent; /* Fondo transparente */
+  appearance: none; /* Eliminar estilos nativos del navegador */
+  margin: 0; /* Ajusta el margen según tus preferencias */
+  padding: 0; /* Ajusta el relleno según tus preferencias */
+}
+
+/* Estilos para personalizar el thumb (bola redonda) */
+.custom-range-input::-webkit-slider-thumb {
+  appearance: none; /* Eliminar estilos nativos del navegador */
+  width: 14px; /* Ancho del thumb */
+  height: 14px; /* Altura del thumb */
+  background-color: gray; /* Color del thumb */
+  border-radius: 50%; /* Bola redonda */
+  cursor: pointer; /* Cambiar el cursor al pasar sobre el thumb */
+}
+
+
+@media (max-width: 814px) {
+  .todos-los-filtros {
+    display: none;
+  }
+} 
+
+
+
+
 
 
