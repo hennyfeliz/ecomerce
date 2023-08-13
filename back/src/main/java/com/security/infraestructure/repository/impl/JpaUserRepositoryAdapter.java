@@ -33,7 +33,8 @@ public class JpaUserRepositoryAdapter implements UserRepositoryPort {
 
     @Override
     public Optional<User> findByEmail(String email) {
-        return Optional.empty();
+        return jpaUserRepository.findByEmail(email)
+                .map(UserEntity::toDomainModel);
     }
 
     @Override
