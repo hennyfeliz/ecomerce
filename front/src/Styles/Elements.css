@@ -115,7 +115,7 @@ select {
 .todos-los-filtros {
   background-color: #eeeeee;
   border-radius: 7px;
-  margin: 10px 120px;
+  margin: 10px 60px;
   display: flex;
   flex-wrap: wrap;
 }

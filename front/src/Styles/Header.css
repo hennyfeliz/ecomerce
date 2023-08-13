@@ -152,3 +152,17 @@ header {
     /* display: none; */
   }
 }
+
+.user-icon{
+
+}
+
+.user-icon:hover {
+  .user-info-card {
+    display: block;
+  }
+}
+
+.user-info-card {
+  display: none;
+}
