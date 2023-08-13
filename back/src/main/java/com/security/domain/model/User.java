@@ -1,6 +1,7 @@
 package com.security.domain.model;
 import com.security.infraestructure.entities.ShoppingCartEntity;
 
+import java.sql.ConnectionBuilder;
 import java.util.Date;
 import java.util.Objects;
 
@@ -212,24 +213,8 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", zip='" + zip + '\'' +
-                ", country='" + country + '\'' +
-                ", phone='" + phone + '\'' +
-                ", fax='" + fax + '\'' +
-                ", emailVerified=" + emailVerified +
-                ", registrationDate=" + registrationDate +
-                ", verificationCode='" + verificationCode + '\'' +
-                ", ip='" + ip + '\'' +
-                ", address2='" + address2 + '\'' +
-                ", shoppingCart=" + shoppingCart +
                 '}';
     }
 }
