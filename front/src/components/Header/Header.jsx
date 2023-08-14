@@ -4,8 +4,14 @@ import '../../Styles/Header.css'
 import search from './header_assets/search.svg'
 import cart from './header_assets/cart.svg'
 import user from './header_assets/user-1.svg'
+import UserInfo from '../UserInfo/UserInfo'
 
 const Header = () => {
+  const [isHovered, setIsHovered] = useState(false); // Inicializa como false
+
+  const handleOpenModal = () => {
+    setIsHovered(!isHovered)
+  };
 
   let [shoppingCartNumber, setShoppingCartNumber] = useState(4)
 
@@ -38,7 +44,10 @@ const Header = () => {
             />
           </div>
           <div className="right-side-header-container">
-            <div>
+            <div
+              className='user-icon'
+              onClick={handleOpenModal}
+            >
               <img
                 src={user}
                 alt="user-icon"
@@ -58,7 +67,11 @@ const Header = () => {
           </div>
         </div>
       </header>
-
+      {isHovered && (
+        <div>
+          <UserInfo />
+        </div>
+      )}
       {/* <button onClick={aumentarNumber}>Aumentar</button> */}
     </>
   )
