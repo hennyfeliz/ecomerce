@@ -1,0 +1,74 @@
+.login-elements {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.login-elements > * {
+  margin: 2px 0;
+}
+
+input {
+  border: none;
+  outline: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+}
+
+.login-elements > div {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.login-card {
+  margin: auto;
+  margin-top: 200px;
+  width: 300px;
+  padding: 30px;
+  background-color: #969696;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+button {
+  display: flex;
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+}
+
+button {
+  border-radius: 6px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  height: 40px;
+  width: 200px;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #000000;
+  cursor: pointer;
+  color: white;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+button:hover {
+  background-color: #696969;
+  border-color: #8b2106;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+span {
+  display: flex;
+  font-weight: 600;
+  font-size: 17px;
+  height: 30px;
+  width: 200px;
+  padding-left: 10px;
+}
