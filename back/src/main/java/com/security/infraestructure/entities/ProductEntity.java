@@ -6,6 +6,7 @@ import com.security.domain.model.ProductCategory;
 import com.security.domain.model.ShoppingCart;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CollectionId;
 
 import java.util.Date;
 import java.util.List;
@@ -53,9 +54,14 @@ public class ProductEntity {
     @ToString.Exclude
     private List<OrderDetailEntity> orderDetail;
 
+
+
+//    @JsonIgnore
+//    @ManyToOne(targetEntity = ShoppingCartEntity.class, cascade = CascadeType.ALL)
     @JsonIgnore
-    @OneToMany(mappedBy = "product")
-    private List<ShoppingCartEntity> shoppingCart;
+    @ManyToOne
+    @JoinColumn(name = "shopping_cart")
+    private ShoppingCartEntity shoppingCart;
 
     @JsonIgnore
     @OneToMany(mappedBy = "product")

@@ -28,9 +28,8 @@ public class ShoppingCartEntity {
     private UserEntity user;
 
     @JsonIgnore
-    @OneToOne
-    @JoinColumn(name = "product")
-    private ProductEntity product;
+    @OneToMany(mappedBy = "shoppingCart")
+    private List<ProductEntity> product;
 
     private int quantity;
 
