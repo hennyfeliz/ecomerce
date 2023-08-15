@@ -1,6 +1,7 @@
 package com.security.domain.model;
 
 import com.security.infraestructure.entities.ProductEntity;
+import com.security.infraestructure.entities.ProductEntity;
 import com.security.infraestructure.entities.UserEntity;
 
 import java.util.List;
@@ -9,10 +10,10 @@ import java.util.Objects;
 public class ShoppingCart {
     private Long id;
     private UserEntity user;
-    private ProductEntity product;
+    private List<ProductEntity> product;
     private int quantity;
 
-    public ShoppingCart(Long id, UserEntity user, ProductEntity product, int quantity) {
+    public ShoppingCart(Long id, UserEntity user, List<ProductEntity> product, int quantity) {
         this.id = id;
         this.user = user;
         this.product = product;
@@ -35,11 +36,11 @@ public class ShoppingCart {
         this.user = user;
     }
 
-    public ProductEntity getProduct() {
+    public List<ProductEntity> getProduct() {
         return product;
     }
 
-    public void setProduct(ProductEntity product) {
+    public void setProduct(List<ProductEntity> product) {
         this.product = product;
     }
 

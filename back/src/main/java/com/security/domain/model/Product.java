@@ -27,10 +27,10 @@ public class Product {
     private byte unlimited;
     private String location;
     private List<OrderDetailEntity> orderDetail;
-    private List<ShoppingCartEntity> shoppingCart;
+    private ShoppingCartEntity shoppingCart;
     private List<ProductOptionEntity> productOptions;
 
-    public Product(Long id, String sku, String name, float price, float weight, String cartDesc, String shortDesc, String longDesc, String thumb, String image, Integer category, Date updateDate, Float stock, byte live, byte unlimited, String location, List<OrderDetailEntity> orderDetail, List<ShoppingCartEntity> shoppingCart, List<ProductOptionEntity> productOptions) {
+    public Product(Long id, String sku, String name, float price, float weight, String cartDesc, String shortDesc, String longDesc, String thumb, String image, Integer category, Date updateDate, Float stock, byte live, byte unlimited, String location, List<OrderDetailEntity> orderDetail, ShoppingCartEntity shoppingCart, List<ProductOptionEntity> productOptions) {
         this.id = id;
         this.sku = sku;
         this.name = name;
@@ -192,11 +192,11 @@ public class Product {
         this.orderDetail = orderDetail;
     }
 
-    public List<ShoppingCartEntity> getShoppingCart() {
+    public ShoppingCartEntity getShoppingCart() {
         return shoppingCart;
     }
 
-    public void setShoppingCart(List<ShoppingCartEntity> shoppingCart) {
+    public void setShoppingCart(ShoppingCartEntity shoppingCart) {
         this.shoppingCart = shoppingCart;
     }
 
