@@ -58,7 +58,7 @@ public class ProductEntity {
 
 //    @JsonIgnore
 //    @ManyToOne(targetEntity = ShoppingCartEntity.class, cascade = CascadeType.ALL)
-    @JsonIgnore
+//    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "shopping_cart")
     private ShoppingCartEntity shoppingCart;
