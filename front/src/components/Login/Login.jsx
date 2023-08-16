@@ -59,7 +59,7 @@ const Login = () => {
             <label>mostrar contraseña</label>
           </div>
         </div>
-        <button onClick={handleSubmit}>entrar</button>
+        <button className="login-button" onClick={handleSubmit}>entrar</button>
       </div>
     </>
   )
