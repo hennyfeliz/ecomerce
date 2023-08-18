@@ -41,6 +41,17 @@
   margin: 1px;
 }
 
+a {
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 4px;
+  height: 30px;
+  color: black;
+  transition: background-color 0.3s;
+  /* padding: 0 7px; */
+  margin: 1px;
+}
+
 .user-info > div:hover,
 .user-info > span:hover,
 .logout-cont:hover {
