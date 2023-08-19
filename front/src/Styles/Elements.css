@@ -5,6 +5,7 @@
 }
 
 .element {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 250px;
@@ -140,15 +141,28 @@ select {
   cursor: pointer; /* Cambiar el cursor al pasar sobre el thumb */
 }
 
-
 @media (max-width: 814px) {
   .todos-los-filtros {
     display: none;
   }
-} 
+}
 
+.heart-icon{
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  right: 10px;
+  top: 10px;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
 
+.heart-icon:hover{
+  background: #d3d3d3;
+}
 
-
-
+.element-container{
+  position: relative;
+}
 

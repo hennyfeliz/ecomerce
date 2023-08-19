@@ -3,6 +3,8 @@ import productIcon from './assets/error.svg'
 import Modal from '../Modal/Modal'
 import { useEffect, useState } from 'react'
 import fetchData from '../../fetch/axiosFetch'
+import whiteHeart from './assets/heart.svg'
+import blackHeart from './assets/heart-black.svg'
 
 const Elements = () => {
 
@@ -12,6 +14,11 @@ const Elements = () => {
   const [originalElements, setOriginalElements] = useState([]);
   const [sortBy, setSortBy] = useState(''); // Estado para el criterio de ordenamiento
   const [priceRange, setPriceRange] = useState(100); // Estado para el rango de precios
+  const [heart, setHeart] = useState(true);
+
+  const heartHandler = () => {
+    setHeart(!heart);
+  }
 
   const handlePriceRangeChange = (e) => {
     setPriceRange(parseInt(e.target.value));
@@ -117,10 +124,22 @@ const Elements = () => {
         {
           elements.map((item, index) => {
             return (
-              <div key={index}>
+              <div key={index} className="element-container">
                 <div className="element" onClick={() =>
                   openModal(item)
                 }>
+                  {
+                    heart ? <img
+                      src={whiteHeart}
+                      className="heart-icon"
+                      onClick={heartHandler}
+                    /> :
+                      <img
+                        src={blackHeart}
+                        className="heart-icon"
+                        onClick={heartHandler}
+                      />
+                  }
                   <img
                     alt="product-icon"
                     src={productIcon}
