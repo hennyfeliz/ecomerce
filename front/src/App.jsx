@@ -17,8 +17,8 @@ function App() {
               <Elements />
             </>
           } />
-          <Route path="/login" element={<Login />} />
           <Route path="/user" element={<UserDashboard />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>

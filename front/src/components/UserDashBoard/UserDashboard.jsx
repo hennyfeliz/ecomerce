@@ -8,7 +8,7 @@ const UserDashBoard = ({ isOpen, closeModal }) => {
 
   useEffect(() => {
     console.log('dashboard')
-    console.log(sessionStorage.getItem('user-credentials').toString());
+    console.log(sessionStorage.getItem('user-credentials'));
     fetchData('GET', `/user/email/${sessionStorage.getItem('user-credentials')}`, (data) => {
       setData(data);
     });
