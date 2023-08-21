@@ -5,7 +5,8 @@
 
 header {
   /* border: 1px solid black; */
-  width: 100%;
+  width: 88%;
+  margin: auto;
   height: 80px;
   display: flex;
   align-items: center;
@@ -14,7 +15,7 @@ header {
 }
 
 .header-title {
-  margin-left: 40px;
+  /* margin-left: 40px; */
 }
 
 .header-search {
@@ -22,7 +23,7 @@ header {
   align-items: center;
   justify-content: center;
   justify-items: center;
-  margin-right: 40px;
+  /* margin-right: 40px; */
 }
 
 .header-search > span {
