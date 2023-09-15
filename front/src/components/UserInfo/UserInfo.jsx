@@ -42,7 +42,6 @@ const UserInfo = () => {
       <UserDashboard
         isOpen={isModalOpen}
         closeModal={closeModal}
-      // data={selectedModalData}
       />
     </>
   );
